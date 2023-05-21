@@ -1,7 +1,7 @@
 <template>
     <header>
         <h3>Task Tracker</h3>
-        <Button :text="text" :bgColor="bgColor" />
+        <Button :text="showTask ? 'Add Task' : 'Close' " :bgColor="`${showTask ? 'green' : 'darkred'}`" />
     </header>
 </template>
 
@@ -10,10 +10,9 @@ import Button from "./Button.vue";
 
 export default {
     name: "Header",
-    data: () => ({
-        text: "Add Task",
-        bgColor: "green",
-    }),
+    props: {
+        showTask: Boolean,
+    },
     components: {
         Button,
     }

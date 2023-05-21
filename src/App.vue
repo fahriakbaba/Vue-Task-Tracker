@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header />
+    <Header :showTask="showTask" />
     <Tasks :todos="todos" />
   </div>
 </template>
@@ -22,6 +22,7 @@ export default {
         {id:2, title: "Ride a bike", day:"Tuesday"},
         {id:3, title: "Go shopping", day:"Monday"}
       ],
+      showTask: true,
     }
   },
   methods: {

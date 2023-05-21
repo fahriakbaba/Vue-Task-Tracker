@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header :showTask="showTask" />
-    <Tasks :todos="todos" />
+    <Tasks :todos="todos" @delete-task="deleteTask" />
   </div>
 </template>
 
@@ -26,9 +26,8 @@ export default {
     }
   },
   methods: {
-    deleteMessage(msg) {
-      console.log(msg);
-      console.log("todos: ", this.todos);
+    deleteTask(id) {
+      this.todos = this.todos.filter(todo => todo.id !== id);
     }
   },
   // async mounted() {

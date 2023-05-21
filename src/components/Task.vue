@@ -1,7 +1,7 @@
 <template>
     <li>
         <h5>{{ todo.title }}
-            <i class="fa-solid fa-trash icon"></i>
+            <i class="fa-solid fa-trash icon" v-on:click="$emit('delete-task', todo.id)"></i>
         </h5>
         <p>{{ todo.day }}</p>
     </li>
@@ -16,9 +16,6 @@ export default {
     methods: {
 
     },
-    created() {
-        console.log(this.todo);
-    }
 }
 </script>
 

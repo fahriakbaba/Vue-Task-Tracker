@@ -1,7 +1,7 @@
 <template>
     <ul>
         <li :key="todo.id" v-for="todo in todos">
-            <Task :todo="todo" />
+            <Task :todo="todo" @delete-task="$emit('delete-task', todo.id)"/>
         </li>
     </ul>
 </template>
@@ -17,7 +17,7 @@ export default {
     props: {
         todos: Array,
     },
-
+    emits: ["delete-task",]
 }
 </script>
 

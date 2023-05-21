@@ -1,17 +1,19 @@
 <template>
-    <div class="todos">
-        todos
-    </div>
+    <ul :key="todo.id" class="todos" v-for="todo in todos">
+       {{ todo.title }}
+    </ul>
 </template>
 
 <script>
+
+
 export default {
     name: "Tasks",
+    props: ["todos"],
+
 }
 </script>
 
 <style scoped>
-.todos {
-    box-shadow: 5px 5px 12px black;
-}
+ 
 </style>

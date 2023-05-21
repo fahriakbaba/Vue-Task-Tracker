@@ -1,7 +1,7 @@
 <template>
     <header>
         <h3>Task Tracker</h3>
-        <Button />
+        <Button :text="text" :bgColor="bgColor" />
     </header>
 </template>
 
@@ -10,6 +10,10 @@ import Button from "./Button.vue";
 
 export default {
     name: "Header",
+    data: () => ({
+        text: "Add Task",
+        bgColor: "green",
+    }),
     components: {
         Button,
     }

@@ -1,14 +1,18 @@
 <template>
     <header>
         <h3>Task Tracker</h3>
-        <button class="btn">button</button>
+        <Button />
     </header>
 </template>
 
 <script>
+import Button from "./Button.vue";
+
 export default {
     name: "Header",
-    
+    components: {
+        Button,
+    }
 }
 </script>
 

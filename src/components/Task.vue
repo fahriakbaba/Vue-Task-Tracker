@@ -1,5 +1,5 @@
 <template>
-    <li>
+    <li class="border-left">
         <h5>{{ todo.title }}
             <i class="fa-solid fa-trash icon" v-on:click="$emit('delete-task', todo.id)"></i>
         </h5>
@@ -42,5 +42,9 @@ li p {
 .icon {
     color: #DC3545;
     cursor: pointer;
+}
+
+.border-left {
+    border-left: 4px solid green;
 }
 </style>

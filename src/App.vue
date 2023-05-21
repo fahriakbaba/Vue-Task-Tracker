@@ -54,6 +54,7 @@ export default {
   border-radius: 4px;
   display: flex;
   flex-direction: column;
+  min-width: 425px;
   width: 30%;
   margin:  3rem auto;
 }

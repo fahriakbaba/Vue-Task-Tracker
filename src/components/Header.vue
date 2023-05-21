@@ -1,7 +1,7 @@
 <template>
     <header>
         <h3>Task Tracker</h3>
-        <Button :text="showTask ? 'Add Task' : 'Close' " :bgColor="`${showTask ? 'green' : 'darkred'}`" />
+        <Button :text="showTask ? 'Add Task' : 'Close' " :bgColor="`${showTask ? 'green' : '#DC3545'}`" />
     </header>
 </template>
 
@@ -24,7 +24,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: .75rem;
+    margin-bottom: 1rem;
 }
 
 header h3 {

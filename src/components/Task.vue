@@ -25,6 +25,8 @@ export default {
 <style scoped>
 li {
     margin: .3rem 0;
+    background-color: whitesmoke;
+    padding: .5rem;
 }
 
 li h5 {
@@ -41,7 +43,7 @@ li p {
 }
 
 .icon {
-    color: rgb(121, 7, 7);
+    color: #DC3545;
     cursor: pointer;
 }
 </style>

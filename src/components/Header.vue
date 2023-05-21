@@ -20,5 +20,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .75rem;
+}
+
+header h3 {
+    letter-spacing: .7px;
+}
 </style>

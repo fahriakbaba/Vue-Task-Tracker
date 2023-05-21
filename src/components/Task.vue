@@ -1,6 +1,7 @@
 <template>
     <li>
-        {{ todo.title }}
+        <h5>{{ todo.title }}</h5>
+        <p>{{ todo.day }}</p>
     </li>
 </template>
 
@@ -19,4 +20,6 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+ 
+</style>

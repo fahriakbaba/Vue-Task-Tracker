@@ -1,5 +1,5 @@
 <template>
-    <ul class="todos">
+    <ul>
         <li :key="todo.id" v-for="todo in todos">
             <Task :todo="todo" />
         </li>
@@ -21,4 +21,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+ul {
+    list-style-type: none;
+}
+</style>

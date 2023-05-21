@@ -1,19 +1,24 @@
 <template>
-    <ul :key="todo.id" class="todos" v-for="todo in todos">
-       {{ todo.title }}
+    <ul class="todos">
+        <li :key="todo.id" v-for="todo in todos">
+            <Task :todo="todo" />
+        </li>
     </ul>
 </template>
 
 <script>
-
+import Task from "./Task.vue";
 
 export default {
     name: "Tasks",
-    props: ["todos"],
+    components: {
+        Task,
+    },
+    props: {
+        todos: Array,
+    },
 
 }
 </script>
 
-<style scoped>
- 
-</style>
+<style scoped></style>

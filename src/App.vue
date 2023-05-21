@@ -18,9 +18,9 @@ export default {
   data() {
     return {
       todos: [
-        {id:1, title: "Drink a couple of  milk", day:"Friday"},
-        {id:2, title: "Ride a bike", day:"Tuesday"},
-        {id:3, title: "Go shopping", day:"Monday"}
+        { id: 1, title: "Drink a couple of  milk", day: "Friday", isDone: false },
+        { id: 2, title: "Ride a bike", day: "Tuesday", isDone: true },
+        { id: 3, title: "Go shopping", day: "Monday", isDone: false }
       ],
       showTask: true,
     }
@@ -41,7 +41,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -56,6 +56,6 @@ export default {
   flex-direction: column;
   min-width: 425px;
   width: 30%;
-  margin:  3rem auto;
+  margin: 3rem auto;
 }
 </style>

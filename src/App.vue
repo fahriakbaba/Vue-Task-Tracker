@@ -20,7 +20,7 @@ export default {
       todos: [
         { id: 1, title: "Drink a couple of  milk", day: "Friday", isDone: false },
         { id: 2, title: "Ride a bike", day: "Tuesday", isDone: true },
-        { id: 3, title: "Go shopping", day: "Monday", isDone: false }
+        { id: 3, title: "Go shopping", day: "Monday", isDone: true }
       ],
       showTask: true,
     }

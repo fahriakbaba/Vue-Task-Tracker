@@ -1,10 +1,10 @@
 <template>
-    <li class="border-left">
+    <div :class="`${todo.isDone && 'border-left'}`">
         <h5>{{ todo.title }}
             <i class="fa-solid fa-trash icon" v-on:click="$emit('delete-task', todo.id)"></i>
         </h5>
         <p>{{ todo.day }}</p>
-    </li>
+    </div>
 </template>
 
 <script>
@@ -20,13 +20,13 @@ export default {
 </script>
 
 <style scoped>
-li {
+div{
     margin: .3rem 0;
     background-color: whitesmoke;
     padding: .5rem;
 }
 
-li h5 {
+div h5 {
     font-size: .8rem;
     font-weight: 600;
     display: flex;
@@ -34,7 +34,7 @@ li h5 {
     align-items: center;
 }
 
-li p {
+div p {
     font-size: .7rem;
     color: rgb(73, 69, 69);
 }

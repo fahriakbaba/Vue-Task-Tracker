@@ -42,6 +42,7 @@ div p {
 .icon {
     color: #DC3545;
     cursor: pointer;
+    font-size: .75rem;
 }
 
 .border-left {

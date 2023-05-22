@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header :showTask="showTask" />
-    <Tasks :todos="todos" @delete-task="deleteTask" />
+    <Tasks :todos="todos" @delete-task="deleteTask" @toggle-task="updatedTask" />
   </div>
 </template>
 
@@ -28,6 +28,10 @@ export default {
   methods: {
     deleteTask(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
+    },
+
+    updatedTask(id) {
+      this.todos = this.todos.map(todo => todo.id === id ? {...todo, isDone: !todo.isDone} : todo)
     }
   },
   // async mounted() {

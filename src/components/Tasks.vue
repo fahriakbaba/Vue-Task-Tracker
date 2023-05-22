@@ -1,6 +1,6 @@
 <template>
     <ul>
-        <li :key="todo.id" v-for="todo in todos">
+        <li :key="todo.id" v-for="todo in todos" v-on:dblclick="toggleClick(todo.id)">
             <Task :todo="todo" @delete-task="$emit('delete-task', todo.id)"/>
         </li>
     </ul>
@@ -17,7 +17,12 @@ export default {
     props: {
         todos: Array,
     },
-    emits: ["delete-task",]
+    emits: ["delete-task"],
+    methods: {
+        toggleClick (id){
+            this.$emit("toggle-task", id);
+        }
+    }
 }
 </script>
 

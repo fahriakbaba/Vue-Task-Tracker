@@ -17,7 +17,7 @@ export default {
     props: {
         todos: Array,
     },
-    emits: ["delete-task"],
+    emits: ["delete-task", "toggle-task"],
     methods: {
         toggleClick (id){
             this.$emit("toggle-task", id);

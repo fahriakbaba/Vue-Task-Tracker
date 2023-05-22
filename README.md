@@ -1,5 +1,7 @@
 # Todo App  by using Vue JS 
 
+You can acess the project by clicking [this link](https://github.com/fahriakbaba/Vue-Task-Tracker)
+
 ## Project setup
 ```
 npm install

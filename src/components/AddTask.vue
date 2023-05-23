@@ -1,16 +1,16 @@
 <template>
-    <form class="form">
+    <form class="form" @submit.prevent="handleSubmit" >
         <div class="form-group">
             <label for="task">Task</label>
-            <input id="task" type="text" placeholder="Add Task" />
+            <input id="task" type="text" placeholder="Add Task" v-model="title" />
         </div>
         <div class="form-group">
             <label for="dayAndTime">Day & Time</label>
-            <input id="dayAndTask" type="text" placeholder="Add Day & Time" />
+            <input id="dayAndTask" type="text" placeholder="Add Day & Time" v-model="day" />
         </div>
         <div class="form-reminder">
             <label for="reminder">Set Reminder</label>
-            <input type="checkbox" name="reminder" id="reminder">
+            <input type="checkbox" name="reminder" id="reminder" v-model="isDone" />
         </div>
         <button type="submit">Save Task</button>
     </form>
@@ -19,6 +19,32 @@
 <script>
 export default {
     name: "AddTask",
+    data: () => ({
+        title:"",
+        day:"",
+        isDone: false,
+    }),
+    methods: {
+        handleSubmit() {
+            const newTask = {
+                id: Date.now(),
+                title: this.title,
+                day: this.day,
+                isDone: this.isDone,
+            };
+
+            if(!this.title) {
+                alert("You should fill empty fields!")
+            } else{
+                console.log("newTask: ",newTask);
+            }
+
+            //reset data
+            this.title ="";
+            this.day = "";
+            this.isDone = "";
+        }
+    }
 }
 </script>
 

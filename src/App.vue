@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header :showTask="showTask" />
-    <AddTask />
+    <AddTask @add-task="handleAddTask" />
     <Tasks :todos="todos" @delete-task="deleteTask" @toggle-task="updatedTask" />
   </div>
 </template>
@@ -32,10 +32,15 @@ export default {
     deleteTask(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
     },
-
     updatedTask(id) {
       this.todos = this.todos.map(todo => todo.id === id ? {...todo, isDone: !todo.isDone} : todo)
-    }
+    },
+    handleAddTask(newTask) {
+      //first option for adding new task
+      // this.todos.push(newTask);
+      //second option for adding new task
+      this.todos = [...this.todos, newTask];
+    } 
   },
   // async mounted() {
   //   const res = await fetch("https://jsonplaceholder.typicode.com/todos");

@@ -27,7 +27,7 @@ export default {
     methods: {
         handleSubmit() {
             const newTask = {
-                id: Date.now(),
+                id: Date.now().toString(),
                 title: this.title,
                 day: this.day,
                 isDone: this.isDone,
@@ -37,6 +37,7 @@ export default {
                 alert("You should fill empty fields!")
             } else{
                 console.log("newTask: ",newTask);
+                this.$emit("add-task", newTask);
             }
 
             //reset data
@@ -99,7 +100,7 @@ export default {
 }
 
 button {
-    margin-top: .75rem;
+    margin: .75rem 0;
     padding: .3rem .6rem;
     background-color: black;
     color: white;

@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       todos: [],
-      showTask: true,
+      showTask: false,
     }
   },
   methods: {
@@ -36,9 +36,6 @@ export default {
     },
 
     async handleAddTask(newTask) {
-      //first option for adding new task
-      // this.todos.push(newTask);
-      //second option for adding new task
       const res = await fetch("http://localhost:8888/todos", {
         method: 'POST',
         body: JSON.stringify(newTask),

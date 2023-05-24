@@ -1,5 +1,5 @@
 <template>
-    <button v-on:click="clickBtn" :style="{backgroundColor: bgColor}">{{text}}</button>
+    <button v-on:click="$emit('toggle-btn')" :style="{backgroundColor: bgColor}">{{text}}</button>
 </template>
 
 <script>
@@ -9,9 +9,6 @@ export default {
         text: String,
         bgColor: String
     },
-    methods: {
-        clickBtn: () => console.log("btn is clicked"),
-    }
 } 
 </script>
 

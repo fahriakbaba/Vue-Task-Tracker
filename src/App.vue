@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-    <Header :showTask="showTask" />
-    <AddTask @add-task="handleAddTask" />
+    <Header :showTask="showTask" @toggle-btn="toggleBtn" />
+    <div v-show="showTask">
+      <AddTask @add-task="handleAddTask" />
+    </div>
     <Tasks :todos="todos" @delete-task="deleteTask" @toggle-task="updatedTask" />
   </div>
 </template>
@@ -40,7 +42,10 @@ export default {
       // this.todos.push(newTask);
       //second option for adding new task
       this.todos = [...this.todos, newTask];
-    } 
+    },
+    toggleBtn() {
+      this.showTask = !this.showTask;
+    }
   },
   // async mounted() {
   //   const res = await fetch("https://jsonplaceholder.typicode.com/todos");

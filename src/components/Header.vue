@@ -1,7 +1,7 @@
 <template>
     <header>
         <h3>Task Tracker</h3>
-        <Button :text="showTask ? 'Add Task' : 'Close' " :bgColor="`${showTask ? 'green' : '#DC3545'}`" />
+        <Button :text="showTask ? 'Close' : 'Add Task' " :bgColor="`${showTask ? '#DC3545' : 'green'}`" @toggle-btn="$emit('toggle-btn')" />
     </header>
 </template>
 
@@ -15,7 +15,8 @@ export default {
     },
     components: {
         Button,
-    }
+    },
+    emits: ["toggle-btn"],
 }
 </script>
 

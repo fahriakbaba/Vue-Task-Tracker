@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-cloak="cloak">
     <Header :showTask="showTask" @toggle-btn="toggleBtn" />
     <div v-show="showTask">
       <AddTask @add-task="handleAddTask" />
@@ -74,5 +74,21 @@ export default {
   min-width: 425px;
   width: 30%;
   margin: 3rem auto;
+}
+
+[cloak] {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    margin: 3rem .5rem;
+    min-width: 375px;
+  }
 }
 </style>

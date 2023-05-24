@@ -1,10 +1,13 @@
 # Todo App  by using Vue JS 
 
-You can acess the project by clicking [this link](https://fahriaakbaba-vue-task-tracker.netlify.app/)
-
 ## Project setup
 ```
 npm install
+```
+
+### Backend setup
+```
+npm run backend
 ```
 
 ### Compiles and hot-reloads for development

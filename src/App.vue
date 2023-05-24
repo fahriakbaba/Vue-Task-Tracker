@@ -22,7 +22,11 @@ export default {
   },
   data() {
     return {
-      todos: [],
+      todos: [{ "id": 1, "title": "Drink a couple of  milk", "day": "Friday", "isDone": false },
+        { "id": 2, "title": "Ride a bike", "day": "Tuesday", "isDone": true },
+        { "id": 3, "title": "Go shopping", "day": "Monday", "isDone": true },
+        { "id": 4, "title": "take a shower", "day": "every day", "isDone": true },
+        { "id": 5, "title": "make a cake", "day": "sunday", "isDone": true } ],
       showTask: true,
     }
   },

@@ -22,11 +22,7 @@ export default {
   },
   data() {
     return {
-      todos: [{ "id": 1, "title": "Drink a couple of  milk", "day": "Friday", "isDone": false },
-        { "id": 2, "title": "Ride a bike", "day": "Tuesday", "isDone": true },
-        { "id": 3, "title": "Go shopping", "day": "Monday", "isDone": true },
-        { "id": 4, "title": "take a shower", "day": "every day", "isDone": true },
-        { "id": 5, "title": "make a cake", "day": "sunday", "isDone": true } ],
+      todos: [],
       showTask: true,
     }
   },
@@ -34,15 +30,26 @@ export default {
     deleteTask(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
     },
+    
     updatedTask(id) {
-      this.todos = this.todos.map(todo => todo.id === id ? {...todo, isDone: !todo.isDone} : todo)
+      this.todos = this.todos.map(todo => todo.id === id ? { ...todo, isDone: !todo.isDone } : todo)
     },
-    handleAddTask(newTask) {
+
+    async handleAddTask(newTask) {
       //first option for adding new task
       // this.todos.push(newTask);
       //second option for adding new task
-      this.todos = [...this.todos, newTask];
+      const res = await fetch("http://localhost:8888/todos", {
+        method: 'POST',
+        body: JSON.stringify(newTask),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      });
+      const data = await res.json();
+      this.todos = [...this.todos, data];
     },
+
     toggleBtn() {
       this.showTask = !this.showTask;
     }
@@ -50,7 +57,7 @@ export default {
   async mounted() {
     const res = await fetch("http://localhost:8888/todos");
     const data = await res.json();
-    this.todos = data; 
+    this.todos = data;
   }
 }
 </script>
@@ -86,6 +93,7 @@ export default {
     justify-content: center;
     align-items: center;
   }
+
   .container {
     margin: 3rem .5rem;
     min-width: 375px;

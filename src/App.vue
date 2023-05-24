@@ -22,11 +22,7 @@ export default {
   },
   data() {
     return {
-      todos: [
-        { id: 1, title: "Drink a couple of  milk", day: "Friday", isDone: false },
-        { id: 2, title: "Ride a bike", day: "Tuesday", isDone: true },
-        { id: 3, title: "Go shopping", day: "Monday", isDone: true }
-      ],
+      todos: [],
       showTask: true,
     }
   },
@@ -47,11 +43,11 @@ export default {
       this.showTask = !this.showTask;
     }
   },
-  // async mounted() {
-  //   const res = await fetch("https://jsonplaceholder.typicode.com/todos");
-  //   const data = await res.json();
-  //   this.todos = data; 
-  // }
+  async mounted() {
+    const res = await fetch("http://localhost:8888/todos");
+    const data = await res.json();
+    this.todos = data; 
+  }
 }
 </script>
 

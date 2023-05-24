@@ -1,6 +1,6 @@
 # Todo App  by using Vue JS 
 
-You can acess the project by clicking [this link](https://github.com/fahriakbaba/Vue-Task-Tracker)
+You can acess the project by clicking [this link](https://fahriaakbaba-vue-task-tracker.netlify.app/)
 
 ## Project setup
 ```

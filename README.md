@@ -22,3 +22,7 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+![Image1](./src/assets/task-tracker1.png)
+
+![Image2](./src/assets/task-tracker2.png)

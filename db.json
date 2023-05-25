@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Drink a couple of  milk",
       "day": "Friday",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": 2,
@@ -31,10 +31,10 @@
       "isDone": false
     },
     {
-      "id": "1684984800585",
-      "title": "go home ",
-      "day": "Tuesday",
-      "isDone": true
+      "id": "1684985345078",
+      "title": "go to cinema",
+      "day": "friday",
+      "isDone": false
     }
   ]
 }

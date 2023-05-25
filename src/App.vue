@@ -5,6 +5,7 @@
       <AddTask @add-task="handleAddTask" />
     </div>
     <Tasks :todos="todos" @delete-task="deleteTask" @toggle-task="updatedTask" />
+    <Footer />
   </div>
 </template>
 
@@ -12,6 +13,7 @@
 import Header from "./components/Header.vue";
 import Tasks from "./components/Tasks.vue";
 import AddTask from "./components/AddTask.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: 'App',
@@ -19,6 +21,7 @@ export default {
     Header,
     Tasks,
     AddTask,
+    Footer,
   },
   data() {
     return {

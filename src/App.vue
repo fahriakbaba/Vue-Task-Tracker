@@ -27,8 +27,10 @@ export default {
     }
   },
   methods: {
-    deleteTask(id) {
+    async deleteTask(id) {
+      await fetch("http://localhost:8888/todos/" + id, { method: "DELETE"});
       this.todos = this.todos.filter(todo => todo.id !== id);
+      console.log("Delete task: ", id);
     },
     
     updatedTask(id) {
@@ -45,6 +47,7 @@ export default {
       });
       const data = await res.json();
       this.todos = [...this.todos, data];
+      console.log("Add task: ", newTask);
     },
 
     toggleBtn() {

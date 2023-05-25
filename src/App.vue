@@ -33,8 +33,25 @@ export default {
       console.log("Delete task: ", id);
     },
     
-    updatedTask(id) {
-      this.todos = this.todos.map(todo => todo.id === id ? { ...todo, isDone: !todo.isDone } : todo)
+    async updatedTask(id) {
+      const taskFS = await fetch("http://localhost:8888/todos/" + id);
+      const taskFSJSON = await taskFS.json();
+      const updTask = {
+        ...taskFSJSON,
+        isDone: !taskFSJSON.isDone
+      };
+
+      const res = await fetch("http://localhost:8888/todos/" + id, {
+        method: "PUT",
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify(updTask)
+      });
+      const data = await res.json();
+
+      this.todos = this.todos.map(todo => todo.id === id ? { ...todo, isDone: data.isDone } : todo);
+      console.log("Updated task: ", id);
     },
 
     async handleAddTask(newTask) {
@@ -50,7 +67,7 @@ export default {
       console.log("Add task: ", newTask);
     },
 
-    toggleBtn() {
+  toggleBtn() {
       this.showTask = !this.showTask;
     }
   },

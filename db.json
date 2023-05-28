@@ -34,7 +34,7 @@
       "id": "1684985345078",
       "title": "go to cinema",
       "day": "friday",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "1684986972165",
@@ -47,6 +47,18 @@
       "title": "add a eggs to bowl ",
       "day": "3 times per week",
       "isDone": ""
+    },
+    {
+      "id": "1685120863596",
+      "title": "go on a picnic",
+      "day": "every day",
+      "isDone": true
+    },
+    {
+      "id": "1685251776440",
+      "title": "eat an egg",
+      "day": "everyday",
+      "isDone": true
     }
   ]
 }

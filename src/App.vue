@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       todos: [],
-      showTask: true,
+      showTask: false,
     }
   },
   methods: {
